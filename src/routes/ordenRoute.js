@@ -1,10 +1,10 @@
-import express from "express";
-import {
+const express = require("express");
+const {
   actualizarEstadoOrden,
   eliminarOrden,
   listarOrden,
   registrarOrden,
-} from "../controllers/ordenController.js";
+} = require("../controllers/ordenController.js");
 
 const ordenRoute = express.Router();
 
@@ -20,4 +20,4 @@ ordenRoute.put("/actualizar/:id", actualizarEstadoOrden);
 // eliminar una orden
 ordenRoute.delete("/eliminar/:id", eliminarOrden);
 
-export default ordenRoute;
+module.exports = ordenRoute;

@@ -1,10 +1,10 @@
-import express from "express";
-import {
+const express = require("express");
+const {
   actualizarProducto,
   eliminarProducto,
   listarProducto,
   registrarProducto,
-} from "../controllers/productoController.js";
+} = require("../controllers/productoController.js");
 
 const productoRoute = express.Router();
 
@@ -20,4 +20,4 @@ productoRoute.put("/actualizar/:id", actualizarProducto);
 // eliminar un producto
 productoRoute.delete("/eliminar/:id", eliminarProducto);
 
-export default productoRoute;
+module.exports = productoRoute;

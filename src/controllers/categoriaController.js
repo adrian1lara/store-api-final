@@ -1,7 +1,7 @@
-import Categoria from "../models/categoria.js";
+const Categoria = require("../models/categoria.js");
 
 // obtener todas las categorias
-export const listarCategorias = async (req, res) => {
+exports.listarCategorias = async (req, res) => {
   try {
     const categorias = await Categoria.find();
 
@@ -13,7 +13,7 @@ export const listarCategorias = async (req, res) => {
 };
 
 // crear una nueva categoria
-export const registrarCategoria = async (req, res) => {
+exports.registrarCategoria = async (req, res) => {
   try {
     const { nombre, descripcion } = req.body;
 
@@ -37,7 +37,7 @@ export const registrarCategoria = async (req, res) => {
 };
 
 // actualizar una categoria
-export const actualizarCategoria = async (req, res) => {
+exports.actualizarCategoria = async (req, res) => {
   try {
     const { id } = req.params;
     const { nombre, descripcion } = req.body;
@@ -61,7 +61,7 @@ export const actualizarCategoria = async (req, res) => {
 };
 
 // eliminar una categoria
-export const eliminarCategoria = async (req, res) => {
+exports.eliminarCategoria = async (req, res) => {
   try {
     const { id } = req.params;
     const categoriaExiste = await Categoria.findById(id);

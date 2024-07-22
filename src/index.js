@@ -1,5 +1,5 @@
-import { server } from "./app.js";
-import connect from "./db/connection.js";
+const { server } = require("./app");
+const connect = require("./db/connection");
 
 connect();
 

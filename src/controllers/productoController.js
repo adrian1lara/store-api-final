@@ -1,8 +1,8 @@
-import Categoria from "../models/categoria.js";
-import Producto from "../models/producto.js";
+const Categoria = require("../models/categoria.js");
+const Producto = require("../models/producto.js");
 
 // crear un producto nuevo
-export const registrarProducto = async (req, res) => {
+exports.registrarProducto = async (req, res) => {
   try {
     const { nombre, descripcion, precio, stock, categoria } = req.body;
 
@@ -38,7 +38,7 @@ export const registrarProducto = async (req, res) => {
 };
 
 // obtener detalles de producto
-export const listarProducto = async (req, res) => {
+exports.listarProducto = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -60,7 +60,7 @@ export const listarProducto = async (req, res) => {
 };
 
 // actualizar un producto existente
-export const actualizarProducto = async (req, res) => {
+exports.actualizarProducto = async (req, res) => {
   try {
     const { id } = req.params;
     const { precio, stock } = req.body;
@@ -90,7 +90,7 @@ export const actualizarProducto = async (req, res) => {
 };
 
 // eliminar un producto
-export const eliminarProducto = async (req, res) => {
+exports.eliminarProducto = async (req, res) => {
   try {
     const { id } = req.params;
 

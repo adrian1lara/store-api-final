@@ -1,10 +1,10 @@
-import express from "express";
-import {
+const express = require("express");
+const {
   actualizarCategoria,
   eliminarCategoria,
   listarCategorias,
   registrarCategoria,
-} from "../controllers/categoriaController.js";
+} = require("../controllers/categoriaController.js");
 
 const categoriaRoute = express.Router();
 
@@ -20,4 +20,4 @@ categoriaRoute.put("/actualizar/:id", actualizarCategoria);
 // eliminar una categoria por id
 categoriaRoute.delete("/eliminar/:id", eliminarCategoria);
 
-export default categoriaRoute;
+module.exports = categoriaRoute;

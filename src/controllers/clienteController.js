@@ -1,7 +1,7 @@
-import Cliente from "../models/cliente.js";
+const Cliente = require("../models/cliente.js");
 
 // actualizar la informacion del cliente
-export const actualizarCliente = async (req, res) => {
+exports.actualizarCliente = async (req, res) => {
   try {
     const { id } = req.params;
     const { direccion, telefono } = req.body;
@@ -25,7 +25,7 @@ export const actualizarCliente = async (req, res) => {
 };
 
 // eliminar cliente por id
-export const eliminarCliente = async (req, res) => {
+exports.eliminarCliente = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -45,7 +45,7 @@ export const eliminarCliente = async (req, res) => {
 };
 
 // listar cliente por su id
-export const listarCliente = async (req, res) => {
+exports.listarCliente = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -63,7 +63,7 @@ export const listarCliente = async (req, res) => {
 };
 
 // listar todos los clientes
-export const listarClientes = async (req, res) => {
+exports.listarClientes = async (req, res) => {
   try {
     const clientes = await Cliente.find();
 
@@ -74,7 +74,7 @@ export const listarClientes = async (req, res) => {
 };
 
 // registar un cliente nuevo
-export const registrarCliente = async (req, res) => {
+exports.registrarCliente = async (req, res) => {
   try {
     const { nombre, direccion, correo, telefono } = req.body;
 

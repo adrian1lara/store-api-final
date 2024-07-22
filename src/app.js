@@ -1,15 +1,15 @@
-import express from "express";
-import http from "http";
-import bodyParser from "body-parser";
+const express = require("express");
+const http = require("http");
+const bodyParser = require("body-parser");
 
-import clienteRoute from "./routes/clienteRoute.js";
-import categoriaRoute from "./routes/categoriaRoute.js";
-import productoRoute from "./routes/productoRoute.js";
-import ordenRoute from "./routes/ordenRoute.js";
+const clienteRoute = require("./routes/clienteRoute");
+const categoriaRoute = require("./routes/categoriaRoute");
+const productoRoute = require("./routes/productoRoute");
+const ordenRoute = require("./routes/ordenRoute");
 
-export const app = express();
+const app = express();
 
-export const server = http.createServer(app);
+const server = http.createServer(app);
 
 app.use(bodyParser.json());
 
@@ -24,3 +24,8 @@ app.use("/api/v0/orden", ordenRoute);
 app.get("/", (req, res) => {
   return res.status(201).json({ msg: "alive" });
 });
+
+module.exports = {
+  app,
+  server,
+};

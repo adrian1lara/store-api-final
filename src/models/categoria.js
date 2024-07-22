@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const categoriaSchema = new mongoose.Schema({
   nombre: { type: String },
@@ -7,4 +7,4 @@ const categoriaSchema = new mongoose.Schema({
 
 const Categoria = mongoose.model("Categoria", categoriaSchema);
 
-export default Categoria;
+module.exports = Categoria;

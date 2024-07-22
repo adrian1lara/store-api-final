@@ -1,11 +1,11 @@
-import express from "express";
-import {
+const express = require("express");
+const {
   actualizarCliente,
   eliminarCliente,
   listarCliente,
   listarClientes,
   registrarCliente,
-} from "../controllers/clienteController.js";
+} = require("../controllers/clienteController.js");
 
 const clienteRoute = express.Router();
 
@@ -24,4 +24,4 @@ clienteRoute.get("/:id", listarCliente);
 //eliminar al cliente por id
 clienteRoute.delete("/eliminar/:id", eliminarCliente);
 
-export default clienteRoute;
+module.exports = clienteRoute;

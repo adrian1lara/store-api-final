@@ -1,9 +1,9 @@
-import Cliente from "../models/cliente.js";
-import Orden from "../models/orden.js";
-import Producto from "../models/producto.js";
+const Cliente = require("../models/cliente.js");
+const Orden = require("../models/orden.js");
+const Producto = require("../models/producto.js");
 
 // eliminar una orden
-export const eliminarOrden = async (req, res) => {
+exports.eliminarOrden = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -29,7 +29,7 @@ export const eliminarOrden = async (req, res) => {
 };
 
 // actualizar el estado de una orden
-export const actualizarEstadoOrden = async (req, res) => {
+exports.actualizarEstadoOrden = async (req, res) => {
   const { id } = req.params;
   const { estado } = req.body;
 
@@ -55,7 +55,7 @@ export const actualizarEstadoOrden = async (req, res) => {
 };
 
 // obtener detalle de una orden
-export const listarOrden = async (req, res) => {
+exports.listarOrden = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -77,7 +77,7 @@ export const listarOrden = async (req, res) => {
 };
 
 // crear una nueva orden
-export const registrarOrden = async (req, res) => {
+exports.registrarOrden = async (req, res) => {
   try {
     const { cliente, producto, cantidad, total, estado } = req.body;
     if (!cliente || !producto || !cantidad || !total || !estado) {

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const mongo_uri = "mongodb://localhost:27017/techstore";
 
@@ -11,4 +11,4 @@ const connect = async () => {
   }
 };
 
-export default connect;
+module.exports = connect;

@@ -12,7 +12,7 @@ export const registrarProducto = async (req, res) => {
         .json({ msg: "todos los campos deben ser completados" });
     }
 
-    const categoriaExiste = await Categoria.findById(id);
+    const categoriaExiste = await Categoria.findById(categoria);
 
     if (!categoriaExiste) {
       return res.status(404).json({ msg: "categoria inexistente" });
@@ -77,7 +77,7 @@ export const actualizarProducto = async (req, res) => {
       return res.status(404).json({ msg: "producto no encontrado" });
     }
 
-    await Producto.findOneAndUpdate(id, {
+    await Producto.findByIdAndUpdate(id, {
       precio: precio,
       stock: stock,
     });
